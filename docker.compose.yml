@@ -4,7 +4,6 @@ services:
     image: checkr/flagr
     ports:
       - "18000:18000"
-    environment:
-      FLAGR_DB_DSN: "host=your-db-host user=flagr_user password=flagr_password dbname=flagr sslmode=disable"
-      FLAGR_LOG_LEVEL: "INFO"
+    env_file:
+      - .env
     restart: always
